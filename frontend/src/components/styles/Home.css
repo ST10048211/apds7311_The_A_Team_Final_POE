@@ -1,0 +1,108 @@
+/* src/Home.css */
+
+.home-container {
+    max-width: 560px;
+    max-height: 600px;
+    margin-left: 500px;
+    background: rgba(238, 226, 246, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: borderGlow 3s infinite;
+    overflow-y:scroll;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.home-form-container {
+    width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    /* overflow-y: auto; */
+    background-color: #f9f9f9;
+    margin-top: 30px;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #555;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+li strong {
+    font-weight: bold;
+    color: #333;
+}
+
+p {
+    color: #999;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Button group styling */
+.home-button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.home-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    flex: 1;
+}
+
+.home-button:hover {
+    opacity: 0.9;
+}
+
+.home-button:first-child {
+    background-color: #4CAF50; /* Green for 'Make a New Payment' button */
+}
+
+.home-button:last-child {
+    background-color: #d32f2f; /* Red for 'Logout' button */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,72 @@
+/* src/PaymentDetails.css */
+.payment-details-container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-left: 570px;
+  background: rgba(238, 226, 246, 0.95);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.payment-details-container h2 {
+  text-align: center;
+  color: #000000;
+}
+
+.payment-info p {
+  font-size: 1.1em;
+  margin: 8px 0;
+  color: #2a2a2a;
+}
+
+.message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.approve-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.decline-button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.back-button {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  margin: auto;    
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #1a73e9;
+}
+
+.approve-button:hover, .decline-button:hover {
+  opacity: 0.8;
+}
