@@ -1,8 +1,8 @@
 
-# APDS7311 POE PART 2
+# APDS7311 POE PART 3
 
 
-This project is part of the Portfolio of Evidence (PoE) for APDS7311, developed as a full-stack application using React for the frontend and Node.js and express for the backend. The application provides secure user authentication, payment processing, and account management functionalities for the customer portal.
+This project is the Portfolio of Evidence (PoE) for APDS7311, developed as a full-stack application using React for the frontend and Node.js and express for the backend. The application provides secure user authentication, payment processing, and account management functionalities for the customer portal and employee portal. 
 
 
 ## Table of Contents
@@ -39,11 +39,17 @@ This project is part of the Portfolio of Evidence (PoE) for APDS7311, developed 
 
 ## Project Links
 
+### Part 2:
 **Github Links:** https://github.com/VCSTDN2024/apds7311-part2-the_a_team_apds7311_part_2.git
 
 **YouTube Link:** https://youtu.be/4FyBn17P_GQ
 
+### Part 3:
+**Github Links Project:** 
 
+**Github Links Pipeline:** 
+
+**YouTube Link:** 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
 ------
@@ -55,7 +61,9 @@ This project is part of the Portfolio of Evidence (PoE) for APDS7311, developed 
 The project consists of two main parts: the frontend and the backend.
 
 **Frontend Structure**
+
  - public/: Contains static files for the application.
+        - favicon.ico
 	- index.html: Main HTML file for the React application.
 	- logo192.png, logo512.png: Logo assets.
 	- manifest.json: Configuration for the Progressive Web App (PWA).
@@ -69,12 +77,29 @@ The project consists of two main parts: the frontend and the backend.
 	- logo.svg: SVG logo used in the application.
 	- reportWebVitals.js: For measuring performance metrics.
 	- setupTests.js: Configures the testing environment.
+        - styles.css
  - components/: Contains reusable React components.
 	- AccountAndPayment.js: Handles account and payment operations.
+    - AccountAndPayment.test.js: Conducts tests for the AccountAndPayment.js methods
+     - AdminDashboard.js: Dashboard to view all the transactions
+     - AdminDashboard.test.js: Test to display the transactions
+     - AdminLogin.js: The login form for the admin
+      - Home.js: The transactions display page for the customer 
 	- Login.js: The login form component, managing user authentication.
-	- Payment.css: Styles specific to the payment section.
+     - Login.test.js: Tests for the Login Form
+      - PaymentDetails.css: Styles for the PaymentDetails page
+     - PaymentDetails.js: Form for the customer to make a payment.
 	- PrivateRoute.js: Component for handling protected routes.
+	- PrivateAdminRoute.js: Component for handling protected routes for admin.
 	- Register.js: The user registration form component.
+	- Register.test.js: The Tests for the register component.
+- src/components/styles:
+	- AdminDashboard.css
+	- AdminLogin.css
+	- Home.css
+	- Payment.css
+	- Register.css
+	- login.css
 
 **Backend Structure**
  - .env: Stores environment variables for secure configuration.
@@ -82,17 +107,24 @@ The project consists of two main parts: the frontend and the backend.
  - package.json: Lists dependencies and scripts for the backend.
  - package-lock.json: Lockfile that captures the exact version of dependencies.
  - server.js: Main server file that sets up the Express server and manages routing.
- - config/db.js: Contains the database connection logic.
+ - config/: Contains the database connection logic.
+	- db.js:
+ - controllers/: 
 	- authController.js: Handles authentication operations.
+	- adminController.js: Handles authentication operations for admin.
 	- paymentController.js: Manages payment processing.
  - keys/: Contains SSL keys for secure communication.
 	- certificate.pem: The SSL certificate.
 	- privatekey.pem: The corresponding private key.
- - middlewares/authMiddleware.js: Protects routes that require authentication.
+ - middlewares/: 
+	- authAdmin.js: Protects routes that require authentication for admin.
+	- authMiddleware.js: Protects routes that require authentication for customer.
  - models/: Defines the structure for data models.
+	- AdminUser.js: Represents admin data.
 	- User.js: Represents user data.
 	- Payment.js: Represents payment data.
  - routes/: Defines API endpoints.
+	- adminRoutes.js: Admin-related routes.
 	- authRoutes.js: Authentication-related routes.
 	- paymentRoutes.js: Payment-related routes.
 
@@ -121,7 +153,7 @@ Before you begin, ensure you have the following installed:
 
 **Step 2: Clone the Repository**
 Open a terminal or command prompt and run the following command to clone the repository:
-"git clone <repository-url>"
+`git clone https://github.com/ST10048211/apds7311_The_A_Team_Final_POE.git`
 
 **Step 3: Install Dependencies**
 Frontend
@@ -156,6 +188,8 @@ This will start the backend server, which listens on http://localhost:5000.
 The frontend will be accessible at http://localhost:3000
 This will open up in the browser on the login page 
 
+To navigate to the admin portal, add '/admin' to the url. 
+
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
 ---
@@ -179,25 +213,32 @@ This will open up in the browser on the login page
 
 ## Usage
 
-
+### Customer Portal:
 **Login**
  1. Navigate to /login in your web browser.
  2. Fill in the following fields:
-     - Email: Your registered email address.
+     - ID Number: Your registered ID number.
+     - Account Number: Your registered account number.
      - Password: Your password.
  3. Click the Login button to authenticate.
+ 4. If you dont have an account, then click on register and create and account
 
 **Register**
  1. Navigate to /register.
  2. Fill in the following fields:
      - Name: Your full name.
-     - Email: Your desired email address (must be unique).
+     - ID Number: Your ID Number (must be valid).
+     - Acocunt Number: Your Account Number
      - Password: A strong password for your account.
      - Confirm Password: Repeat the password to confirm.
  3. Click the Register button to create your account.
+ 4. Once the account is created, proceed to Login.
+
+**Home**
+1. After logging in, the user will be brough to the home page, where they can view their transactions and will have the option to logout or to make a new payment.
 
 **Payments**
- 1. After logging in, navigate to the payments section.
+ 1. If the user selectes 'make a new payment' on the home page, they will be navigated to this page.
  2. Fill in the required fields
 		 **Account Information Section:**
 		 Account Number
@@ -212,6 +253,20 @@ This will open up in the browser on the login page
 	Bank
  4. Click the Submit Payment button to process your payment.
 
+### Employee Portal:
+**Login**
+ 1. Navigate to /admin in your web browser.
+ 2. Fill in the following fields:
+     - Username: Admin Username.
+     - Password: Admin password.
+ 3. Click the Login button to authenticate.
+ 4. Admin Data is already defined. Admins cannot register.
+
+**Admin Dashboard**
+1. After logging in, the admin will be brough to the dashboard page, where they can view all the transactions and will have the option to view the transaction deatils or to logout.
+
+**Payment Details**
+1. If the Admin, view the transaction details, if the transaction is still pending, they will have the option to either approve or decline the transaction. They status of the transaction will then be updated and will reflect on both admin (employee) and customer portal.
 
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
