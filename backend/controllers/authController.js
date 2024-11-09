@@ -48,7 +48,6 @@ exports.register = async (req, res) => {
   }
 };
 
-
 // Login function  
 exports.login = async (req, res) => {
   const { username, accountNumber, password } = req.body;
@@ -68,4 +67,3 @@ exports.login = async (req, res) => {
     res.status(500).send('Server error');
   }
 };
-

@@ -46,36 +46,6 @@ describe('Login Component', () => {
         expect(screen.getByText('Invalid Credentials.')).toBeInTheDocument();
     });
 
-    // test('successful login redirects to the payment page', async () => {
-    //     // Mock the fetch API response
-    //     global.fetch = jest.fn(() =>
-    //         Promise.resolve({
-    //             ok: true,
-    //             json: () => Promise.resolve({ token: 'fakeToken' }),
-    //         })
-    //     );
-
-    //     render(
-    //         <BrowserRouter>
-    //             <Login />
-    //         </BrowserRouter>
-    //     );
-
-    //     const idInput = screen.getByPlaceholderText('ID Number');
-    //     const accountInput = screen.getByPlaceholderText('Account Number');
-    //     const passwordInput = screen.getByPlaceholderText('Password');
-    //     const submitButton = screen.getByRole('button', { name: /login/i });
-
-    //     fireEvent.change(idInput, { target: { value: '1234567890123' } });
-    //     fireEvent.change(accountInput, { target: { value: '12345678' } });
-    //     fireEvent.change(passwordInput, { target: { value: 'password' } });
-
-    //     fireEvent.click(submitButton);
-
-    //     // Wait for the navigation to happen
-    //     expect(mockedUsedNavigate).toHaveBeenCalledWith('/payment');
-    // });
-
     test('displays error if API call fails', async () => {
         // Mock the fetch API response
         global.fetch = jest.fn(() =>

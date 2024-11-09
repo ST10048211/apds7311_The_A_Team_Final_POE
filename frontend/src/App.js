@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Payment from './components/AccountAndPayment';
 import PrivateRoute from './components/PrivateRoute';
+import PrivateRouteAdmin from './components/PrivateRouteAdmin';
 // import './styles.css'; 
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
@@ -19,11 +20,6 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 
                 <Route path="/admin" element={<AdminLogin/>}/>
-                <Route path="/admin/dashboard" element={<AdminDashboard />} />
-                <Route path="/admin/payment/:paymentId" element={<PaymentDetails />} />
-
-
-                
 
                 {/* Protect the home route */}
                 <Route
@@ -42,6 +38,26 @@ function App() {
                         </PrivateRoute>
                     }
                 />
+
+
+                <Route
+                    path="/admin/dashboard"
+                    element={
+                        <PrivateRouteAdmin>
+                            <AdminDashboard />
+                        </PrivateRouteAdmin>
+                    }
+                />
+
+                <Route
+                    path="/admin/payment/:paymentId"
+                    element={
+                        <PrivateRouteAdmin>
+                            <PaymentDetails />
+                        </PrivateRouteAdmin>
+                    }
+                />
+
             </Routes>
         </Router>
     );

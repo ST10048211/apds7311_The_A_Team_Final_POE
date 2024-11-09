@@ -73,7 +73,6 @@ const Payment = () => {
 
   const handleLogout = () => {
     // Clear token and navigate to login page
-    //localStorage.removeItem('token');
     navigate('/getpayments');
   };
 

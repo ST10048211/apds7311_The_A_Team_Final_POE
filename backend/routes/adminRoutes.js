@@ -25,17 +25,3 @@ router.put('/payment/:paymentId/status', authAdmin, [
 ], updatePaymentStatus);
 
 module.exports = router;
-
-
-// // routes/admin.js
-// const express = require('express');
-// const { adminLogin } = require('../controllers/adminController');
-// const { check } = require('express-validator');
-// const router = express.Router();
-
-// router.post('/login', [
-//   check('username', 'Username is required').notEmpty(),
-//   check('password', 'Password is required').notEmpty(),
-// ], adminLogin);
-
-// module.exports = router;
