@@ -43,8 +43,8 @@ module.exports.bruteForce = bruteForce;
 
 // Predefined admin users
 const predefinedAdmins = [
-  { username: 'admin1', password: 'password1' }, // Change these for production
-  { username: 'admin2', password: 'password2' },
+  { username: 'EmpAdm123', password: 'Password@123' }, // Change these for production
+  { username: 'EmpAdm456', password: 'P@ssword123!' },
 ];
 
 // Create admin users on server start
@@ -62,6 +62,7 @@ createAdmins();
 
 // Add this line in server.js to register admin routes
 app.use('/admin', require('./routes/adminRoutes'));
+
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));

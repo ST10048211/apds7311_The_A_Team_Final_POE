@@ -4,10 +4,10 @@ body {
     background: linear-gradient(to bottom, #ffffff, #a8e6cf); /* White to Light Green gradient */
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: max-content;
     display: flex;
     align-items: flex-start; /* Changed to start so it doesn't stay centered vertically */
-    flex-direction: column; /* Allow flex to stack content vertically */
+    /* flex-direction: column; Allow flex to stack content vertically */
 }
 
 .admin-form-container {
@@ -20,6 +20,7 @@ body {
     margin-left: 360px;
     margin-top: 30px; /* Added margin-top to prevent it from touching the top edge */
     margin-bottom: 30px; /* Added margin-bottom for spacing */
+    flex-direction: column;
 }
 
 h2 {
