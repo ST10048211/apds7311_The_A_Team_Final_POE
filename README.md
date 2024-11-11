@@ -45,11 +45,11 @@ This project is the Portfolio of Evidence (PoE) for APDS7311, developed as a ful
 **YouTube Link:** https://youtu.be/4FyBn17P_GQ
 
 ### Part 3:
-**Github Links Project:** 
+**Github Link Code:** https://github.com/VCSTDN2024/apds7311-poe-the_a_team_apds7311.git
 
-**Github Links Pipeline:** 
+**Github Link Pipeline:** https://github.com/ST10048211/apds7311_The_A_Team_Final_POE.git
 
-**YouTube Link:** 
+**YouTube Link:** https://youtu.be/pRo6O_J0dLs
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
 ------
